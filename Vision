@@ -8,6 +8,12 @@ local GameName = Library:NewWindow(GameName)
 
 local Tab1 = GameName:NewSection(tab1name)
 
+Tab1:CreateButton("CollectCoins", function(value)
+for i = 1, 200 do
+    game:GetService("ReplicatedStorage").Remotes.CollectCoinEvent:FireServer(i)
+end
+ end)
+
 Tab1:CreateButton("Give ball", function(value)
 local args = {
     [1] = Color3.new(0.615686297416687, 0.250980406999588, 0.529411792755127)
