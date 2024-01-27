@@ -17,15 +17,18 @@ game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("GiveB
  end)
 
 Tab1:CreateButton("UGC Task", function(value)
-local kek = true
-while true do
-x=-4514
-y=-811
-z=-819
+local args = {
+    [1] = Color3.new(0.615686297416687, 0.250980406999588, 0.529411792755127)
+}
 
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(x,y,z)
-game.Players.LocalPlayer.Character.Humanoid.Jump = true
-wait()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("GiveBasketballEvent"):FireServer(unpack(args))
+local args = {
+    [1] = Vector3.new(-4514.9296875, -803.6358642578125, -821.0623779296875)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ThrowBasketballEvent"):FireServer(unpack(args))
+
+wait(6)
 end
  end)
 
